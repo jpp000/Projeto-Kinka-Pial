@@ -1,0 +1,217 @@
+@font-face {
+   font-family: 'cordelina';
+   src: url('cordelina.otf');
+}
+
+:root{
+   --cor-1: #8C694A;
+   --cor-2: #A68263;
+   --cor-3: #593A28;
+   --cor-4: #BFA89B;
+   --cor-5: #F2F2F2;
+}
+
+body{
+   margin: 0;
+   color: #F2F2F2;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html{
+   scroll-behavior: smooth;
+}
+
+ul{
+   display: flex;
+   margin-top: 10px;
+   list-style: none;
+}
+
+li{
+   display: flex;
+   margin-right: 15px;
+   background-color: var(--cor-1);
+   padding: 5px;
+   border-radius: 5px;
+}
+
+li:hover{
+   background-color: var(--cor-3);
+   transition: 0.3s;
+}
+
+.btn-lang {
+   font-family: 'cordelina';
+   border: none;
+   background: none;
+   cursor: pointer;
+   font-size: 18px;
+   color: white;
+   background-color: var(--cor-2);
+   border-radius: 5px;
+}
+
+.btn-lang:hover{
+   background-color: var(--cor-3);
+   transition: 0.3s;
+}
+
+.btn-lang:focus {
+   outline: none;
+}
+
+.language{
+   width: 50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px;
+   border-radius: 5px;
+   background-color: var(--cor-2);
+   padding-right: 30px;
+}  
+
+.language > div{
+   color: white;
+}
+
+.language > div:hover{
+   color: var(--cor-4);
+   cursor: pointer;
+}
+
+.cabecalho{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   box-shadow: 0.2px 0.2px 2px black;
+   position: fixed;
+   height: 7rem;
+   width: 100%;
+   background-color: var(--cor-5);
+   color: var(--cor-3);
+   font-family: 'cordelina';
+   font-weight: 800;
+}
+
+.titulo{
+   color: var(--cor-3);
+   font-size: 30px;
+}
+
+.imagem-lugar{
+   background-image: url(https://lh3.googleusercontent.com/p/AF1QipO09BLtlVh7YcENzqdcIXkzH18Avt22Hfih62wI=s1360-w1360-h1020);
+   min-height: 100vh;
+   
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.fundo-prato{
+   background-image: url(https://carneseing.com.br/wp-content/uploads/2018/10/Costela-assada.jpg);
+   height: 100vh;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: 'cordelina';
+   font-size: 35px;
+   font-weight: 700;
+}
+
+p{
+   text-indent: 10px;
+   margin-bottom: 0;
+   padding-bottom: 10px;
+}
+
+a > li{
+   text-decoration: none;
+   color: white;
+}
+
+h1{
+   color: white;
+   text-align: center;
+}
+
+main{
+   height: 100%;
+   background-color: var(--cor-4);
+   padding-bottom: 20px;
+}
+
+.loc{
+   text-align: center;
+}
+
+table{
+   margin: auto;
+
+}
+
+section{
+   padding-top: 8rem;
+   padding-bottom: 8rem;
+   background-color: var(--cor-4);
+}
+
+.titulo-img{
+   font-weight: 500;
+   margin-bottom: 5px;
+}
+
+.img-prato{
+   text-align: center;
+   background-color: var(--cor-1);
+   width: 50%;
+   margin: auto;
+   padding: 4px;
+   padding-bottom: 10px;
+   margin-bottom: 30px;
+   border-radius: 10px;
+}
+
+img{
+   border-radius: 10px;
+   
+   height: 350px;
+}
+
+figcaption{
+   font-size: larger;
+   font-weight:500;
+}
+
+a{
+   text-decoration: none;
+}
+
+a:hover{
+   color: white;
+}
+
+.form-contato{
+   background-color: var(--cor-2);
+   text-align: center;
+   width: 60%;
+   margin: auto;
+   padding: 30px;
+   border-radius: 10px;
+}
+
+
+
+footer{
+   text-align: center;
+   margin-bottom: 0;
+   padding-top: 0.1px;
+   padding-bottom: 5px;
+   background-color: var(--cor-2);
+   color: white;
+}
+
