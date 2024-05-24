@@ -201,17 +201,25 @@
 
       <section id="contato">
          <h1 class="titulo">Contato</h1>
-
-         <form action="/submit_form" method="post" class="form-contato">
-            <label for="fname">Nome:</label><br>
-            <input type="text" id="fname" name="firstname" value=""><br>
-            <label for="lname">Email:</label><br> 
-            <input type="email" id="lname" name="lastname" value=""><br><br> 
-            <label for="subject">Como foi sua experiência:</label><br>
-            <textarea id="subject" name="subject" value=""></textarea><br>
-            <input type="submit" value="Enviar">
-          </form> 
-      </section>
+         <form action="/submit_form" method="post" class="form-contato" id="contact-form">
+             <div class="form-group">
+                 <label for="fname">Nome:</label><br>
+                 <input type="text" id="fname" name="firstname" value=""><br>
+                 <small id="fname-error" class="error-message"></small>
+             </div>
+             <div class="form-group">
+                 <label for="lname">Email:</label><br>
+                 <input type="email" id="lname" name="lastname" value=""><br>
+                 <small id="lname-error" class="error-message"></small>
+             </div>
+             <div class="form-group">
+                 <label for="subject">Como foi sua experiência:</label><br>
+                 <textarea id="subject" name="subject" value=""></textarea><br>
+                 <small id="subject-error" class="error-message"></small>
+             </div>
+             <input type="submit" value="Enviar">
+         </form>
+     </section>
 
       
       <div id="horarios">
@@ -283,6 +291,74 @@
    </footer>
 
    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contact-form');
+      const fnameInput = document.getElementById('fname');
+      const lnameInput = document.getElementById('lname');
+      const subjectInput = document.getElementById('subject');
+
+      const fnameError = document.getElementById('fname-error');
+      const lnameError = document.getElementById('lname-error');
+      const subjectError = document.getElementById('subject-error');
+
+      fnameInput.addEventListener('input', validateName);
+      lnameInput.addEventListener('input', validateEmail);
+      subjectInput.addEventListener('input', validateSubject);
+
+      form.addEventListener('submit', function(event) {
+         event.preventDefault();
+         if (validateName() & validateEmail() & validateSubject()) {
+               alert('Formulário enviado com sucesso!');
+               form.reset();
+         } else {
+               alert('Por favor, corrija os erros no formulário.');
+         }
+      });
+
+      function validateName() {
+            const nameValue = fnameInput.value.trim();
+            if (nameValue === '') {
+                  fnameError.textContent = 'Nome é obrigatório.';
+                  fnameError.style.display = 'block';
+                  return false;
+            } else {
+                  fnameError.textContent = '';
+                  fnameError.style.display = 'none';
+                  return true;
+            }
+         }
+
+      function validateEmail() {
+            const emailValue = lnameInput.value.trim();
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (emailValue === '') {
+                  lnameError.textContent = 'E-mail é obrigatório.';
+                  lnameError.style.display = 'block';
+                  return false;
+            } else if (!emailPattern.test(emailValue)) {
+                  lnameError.textContent = 'E-mail inválido.';
+                  lnameError.style.display = 'block';
+                  return false;
+            } else {
+                  lnameError.textContent = '';
+                  lnameError.style.display = 'none';
+                  return true;
+            }
+         }
+
+      function validateSubject() {
+            const subjectValue = subjectInput.value.trim();
+            if (subjectValue === '') {
+                  subjectError.textContent = 'Por favor, descreva sua experiência.';
+                  subjectError.style.display = 'block';
+                  return false;
+            } else {
+                  subjectError.textContent = '';
+                  subjectError.style.display = 'none';
+                  return true;
+            }
+         }
+      });
 
 
       function translateToEnglish() {
