@@ -256,33 +256,3 @@ footer{
 }
 
 
-@media (max-width: 450px){
-   .cabecalho{
-      flex-direction: column;
-      width: 50vh;
-   }
-
-   header{
-      padding-bottom: 250px;
-   }
-
-   ul{
-      flex-direction: column;
-   }
-
-   li{
-      margin-bottom: 10px;
-   }
-
-   .img-prato{
-      width: 300px;
-   }
-
-   img{
-      width: 200px;
-   }
-
-   .form-contato{
-      width: 300px;
-   }
-}

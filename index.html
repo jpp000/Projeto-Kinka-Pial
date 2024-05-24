@@ -291,6 +291,72 @@
    </footer>
 
    <script>
+      
+      function applyStyles() {
+         const cabecalho = document.querySelector('.cabecalho');
+         const header = document.querySelector('header');
+         const ul = document.querySelector('ul');
+         const li = document.querySelectorAll('li');
+         const imgPrato = document.querySelector('.img-prato');
+         const img = document.querySelectorAll('img');
+         const formContato = document.querySelector('.form-contato');
+
+         if (window.innerWidth <= 450) {
+            if (cabecalho) {
+                  cabecalho.style.flexDirection = 'column';
+                  cabecalho.style.width = '50vh';
+            }
+            if (header) {
+                  header.style.paddingBottom = '250px';
+            }
+            if (ul) {
+                  ul.style.flexDirection = 'column';
+            }
+            if (li) {
+                  li.forEach(item => item.style.marginBottom = '10px');
+            }
+            if (imgPrato) {
+                  imgPrato.style.width = '300px';
+            }
+            if (img) {
+                  img.forEach(image => image.style.width = '200px');
+            }
+            if (formContato) {
+                  formContato.style.width = '300px';
+            }
+         } else {
+            // Reset styles when width is greater than 450px
+            if (cabecalho) {
+                  cabecalho.style.flexDirection = '';
+                  cabecalho.style.width = '';
+            }
+            if (header) {
+                  header.style.paddingBottom = '';
+            }
+            if (ul) {
+                  ul.style.flexDirection = '';
+            }
+            if (li) {
+                  li.forEach(item => item.style.marginBottom = '');
+            }
+            if (imgPrato) {
+                  imgPrato.style.width = '';
+            }
+            if (img) {
+                  img.forEach(image => image.style.width = '');
+            }
+            if (formContato) {
+                  formContato.style.width = '';
+            }
+         }
+      }
+
+   
+      applyStyles();
+
+   
+      window.addEventListener('resize', applyStyles);
+
       document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('contact-form');
       const fnameInput = document.getElementById('fname');
