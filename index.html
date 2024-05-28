@@ -324,7 +324,7 @@
                   formContato.style.width = '300px';
             }
          } else {
-            // Reset styles when width is greater than 450px
+         
             if (cabecalho) {
                   cabecalho.style.flexDirection = '';
                   cabecalho.style.width = '';
@@ -354,7 +354,7 @@
       window.addEventListener('resize', applyStyles);
 
       document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('contact-form');
+      const form = document.getElementById('contact-form'); 
       const fnameInput = document.getElementById('fname');
       const lnameInput = document.getElementById('lname');
       const subjectInput = document.getElementById('subject');
@@ -362,6 +362,10 @@
       const fnameError = document.getElementById('fname-error');
       const lnameError = document.getElementById('lname-error');
       const subjectError = document.getElementById('subject-error');
+
+      fnameInput.addEventListener('blur', validateName);
+      lnameInput.addEventListener('blur', validateEmail);
+      subjectInput.addEventListener('blur', validateSubject);
 
       fnameInput.addEventListener('input', validateName);
       lnameInput.addEventListener('input', validateEmail);
